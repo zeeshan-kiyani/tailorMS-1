@@ -21,6 +21,11 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
+		// $data['dashboard'] = $this->load->view('dashboard', '', TRUE);
+		// $this->data['dashboard'] = 'dashboard';
+        // $this->load->view('layouts/layout', $this->data);
+		// $data['controller']="dashboard";
 		$this->load->view('welcome_message');
+		$this->load->view('sidebar');
 	}
 }
