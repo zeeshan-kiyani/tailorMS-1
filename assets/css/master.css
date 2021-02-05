@@ -58,7 +58,10 @@ Notes:  decreasing heading by 0.4em with every subsequent heading level
     src: url("../font/Lato-Regular.eot");
     src: url("../font/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Regular.woff") format("woff"), url("../font/Lato-Regular.ttf") format("truetype");
 }
-
+.logo
+{
+    align-self: center;
+}
 body,
 h1,
 .h1,
