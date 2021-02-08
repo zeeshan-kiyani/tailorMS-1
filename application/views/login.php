@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper login-background">
         <div class="auth-content">
             <div class="card">
                 <div class="card-body text-center">
@@ -41,7 +41,7 @@
                                 <label class="custom-control-label" for="remember-me">Remember me on this device</label>
                             </div>
                         </div>
-                        <a class="btn btn-primary shadow-2 mb-4"     href="<?php echo base_url()?>index.php/dashboard">
+                        <a class="btn btn-primary   "     href="<?php echo base_url()?>index.php/dashboard">
                         login
                             <!-- <button class="btn btn-primary shadow-2 mb-4"  href="<?php echo base_url()?>index.php/dashboard" >Login</button> -->
                         </a>

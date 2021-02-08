@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
     <div class="wrapper">
-        <nav id="sidebar" class="">
+    <nav id="sidebar" class="">
             <ul class="list-unstyled components text-secondary">
                 <li>
                     <a href="<?php echo base_url() ?>index.php/dashboard"><i class="fas fa-chalkboard-teacher"></i> Dashboard</a>
@@ -75,113 +75,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </li>
             </ul>
         </nav>
-        <div id="body" class="content-bg">
-            <div class="content ">
+        <div id="body" class="">
+            <div class="content">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12 page-header">
-                            <div class="page-pretitle">Overview</div>
-                            <h2 class="page-title">Dashboard</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="icon-big text-center">
-                                                <i class="teal fas fa-shopping-cart"></i>
+                    <div class="col-md-12">
+                       <div class="card">
+                                <div class="card-header">Add Dress Measurement</div>
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
+                                    <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
+                                        <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                                <label for="state">Select Customer</label>
+                                                <select name="state" class="form-control" required="">
+                                                    <option value="" selected="">Choose...</option>
+                                                    <option value="1">Zeeshan</option>
+                                                    <option value="2">Ali</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="col-sm-8">
-                                            <div class="detail">
-                                                <p class="detail-subtitle">Total Tailor</p>
-                                                <span class="number">0</span>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="chest">Chest</label>
+                                                <input type="text" class="form-control" name="chest" placeholder="Chest" required="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="waist">Waist</label>
+                                                <input type="text" class="form-control" name="waist" placeholder="Waist" required="">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr />
-                                        <div class="stats">
-                                            <i class="fas fa-calendar"></i> For the whole time.
+                                        <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                                <label for="name">Hip</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Hip" required="">
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="icon-big text-center">
-                                                <i class="olive fas fa-money-bill-alt"></i>
-                                            </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="sleeve">Sleeve</label>
+                                            <input type="text" class="form-control" name="sleeve" placeholder="Sleeve" required="">
                                         </div>
-                                        <div class="col-sm-8">
-                                            <div class="detail">
-                                                <p class="detail-subtitle">Total Customer</p>
-                                                <span class="number">0</span>
-                                            </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="insteam">Instream</label>
+                                            <input type="text" class="form-control" name="instream" placeholder="Instream" required="">
                                         </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr />
-                                        <div class="stats">
-                                            <i class="fas fa-calendar"></i> For the whole time.
+                                        <!-- date time here -->
+                                        <!-- <div class="form-group col-md-6">
+                                        <input type="text" class="form-control" data-date-end-date="0d">
+
+                                        </div> -->
+                                        
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="icon-big text-center">
-                                                <i class="violet fas fa-eye"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="detail">
-                                                <p class="detail-subtitle">Total Dress</p>
-                                                <span class="number">0</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr />
-                                        <div class="stats">
-                                            <i class="fas fa-stopwatch"></i> For the whole time.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="icon-big text-center">
-                                                <i class="orange fas fa-envelope"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="detail">
-                                                <p class="detail-subtitle">Total Order</p>
-                                                <span class="number">0</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr />
-                                        <div class="stats">
-                                            <i class="fas fa-envelope-open-text"></i> For the whole time.
-                                        </div>
-                                    </div>
+                                        <!--Hidden field for type -->
+                                        <input type="submit" name="save" class="btn btn-primary"/>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -195,5 +141,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?php echo base_url() ?>ssets/vendor/chartsjs/Chart.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/dashboard-charts.js"></script>
     <script src="<?php echo base_url() ?>assets/js/script.js"></script>
+    <script>
+        $('.datepicker').datepicker();
+
+        $('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});
+    </script>
 </body>
 </html>

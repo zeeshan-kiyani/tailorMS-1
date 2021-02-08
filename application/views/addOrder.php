@@ -81,41 +81,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="row">
                     <div class="col-md-12">
                        <div class="card">
-                                <div class="card-header">Add Tailor</div>
+                                <div class="card-header">Book Order</div>
                                 <div class="card-body">
                                     <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
                                     <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="email">Email</label>
-                                                <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                                                <small class="form-text text-muted">Enter a valid email address.</small>
+                                                <label for="customer">Select Customer</label>
+                                                <select name="customer" class="form-control" required="">
+                                                    <option value="" selected="">Choose...</option>
+                                                    <option value="1">Zeeshan</option>
+                                                    <option value="2">Ali</option>
+                                                </select>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="password">Password</label>
-                                                <input type="password" class="form-control" name="password" placeholder="Password" required="">
-                                                <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
+                                                <label for="tailor">Select Tailor</label>
+                                                <select name="tailor" class="form-control" required="">
+                                                    <option value="" selected="">Choose...</option>
+                                                    <option value="1">Zeeshan</option>
+                                                    <option value="2">Ali</option>
+                                                </select>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="address">Address</label>
-                                            <input type="text" class="form-control" name="address" placeholder="1234 Main St, Unit, Building, or Floor" required="">
                                         </div>
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
-                                                <label for="name">Name</label>
+                                                <label for="name">Return Date</label>
                                                 <input type="text" class="form-control" name="name" placeholder="Name" required="">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="email">Contact</label>
-                                            <input type="email" class="form-control" name="contact" placeholder="" required="">
-                                            <small class="form-text text-muted">Enter a valid contact format(03xx-xxxxxxx)</small>
+                                            <label for="cost">Cost</label>
+                                            <input type="cost" class="form-control" name="cost" placeholder="" required="">
                                         </div>
-                                        
-                                        </div>
-                                        <!--Hidden field for type -->
-                                        <div class="form-group col-md-6">
-                                                <input type="hidden" class="form-control" name="type"  value="1" />
                                         </div>
                                       
                                         <input type="submit" name="save" class="btn btn-primary"/>

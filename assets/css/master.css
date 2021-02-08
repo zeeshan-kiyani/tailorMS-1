@@ -58,9 +58,13 @@ Notes:  decreasing heading by 0.4em with every subsequent heading level
     src: url("../font/Lato-Regular.eot");
     src: url("../font/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Regular.woff") format("woff"), url("../font/Lato-Regular.ttf") format("truetype");
 }
+
 .logo
 {
     align-self: center;
+}
+.block-modal-body{
+    text-align: justify;
 }
 body,
 h1,
@@ -405,7 +409,9 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 .grey {
     color: #767676 !important;
 }
-
+.content-bg{
+    background-image: url('../img/sewing-silhouettes-4939861_1280.png');
+}
 /*------------------------------------------------------------------
 [11. Responsive properties] 
 */

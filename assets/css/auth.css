@@ -26,7 +26,10 @@ body {
 {
     align-self: center;
 }
-
+.login-background{
+    /* background-image: url('../img/login-bg.jpg'); */
+    background-image: url('https://thumbs.dreamstime.com/z/tailoring-workshop-woman-tailor-cutting-fabric-scissors-table-87359748.jpg');
+}
 .wrapper {
     position: relative;
     display: -webkit-box;

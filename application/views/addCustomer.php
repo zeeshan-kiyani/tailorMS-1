@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="row">
                     <div class="col-md-12">
                        <div class="card">
-                                <div class="card-header">Add Tailor</div>
+                                <div class="card-header">Add Customer</div>
                                 <div class="card-body">
                                     <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
                                     <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
@@ -115,7 +115,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                         <!--Hidden field for type -->
                                         <div class="form-group col-md-6">
-                                                <input type="hidden" class="form-control" name="type"  value="1" />
+                                                <input type="hidden" class="form-control" name="type"  value="2" />
                                         </div>
                                       
                                         <input type="submit" name="save" class="btn btn-primary"/>
