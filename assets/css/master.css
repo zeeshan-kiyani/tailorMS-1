@@ -409,9 +409,9 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 .grey {
     color: #767676 !important;
 }
-.content-bg{
-    background-image: url('../img/sewing-silhouettes-4939861_1280.png');
-}
+/* .content-bg{ */
+    /* background-image: url('../img/sewing-silhouettes-4939861_1280.png'); */
+/* } */
 /*------------------------------------------------------------------
 [11. Responsive properties] 
 */
