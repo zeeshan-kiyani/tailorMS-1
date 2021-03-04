@@ -5,7 +5,10 @@ class dashboard extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('customer_model');
 		$this->load->model('tailor_model');
+		$this->load->model('dress_model');
+		$this->load->model('order_model');
     }
 	public function index()
 	{
@@ -18,10 +21,14 @@ class dashboard extends CI_Controller {
 		// $this->load->view('navbar');
 		// $this->load->view('dashboard');
 	}
-	public function dashboardStats(){
-		$this->load->helper('url');;
+	public function dashboardStats()
+	{
+		$data['customer_count'] = $this->customer_model->customerCount();
+		$data['tailor_count'] = $this->tailor_model->tailorCount();
+		$data['dress_count'] = $this->dress_model->dressCount();
+		$data['order_count'] = $this->order_model->orderCount();
 		$this->load->view('navbar');
-		$this->load->view('dashboard');
+		$this->load->view('dashboard',$data);
 	}
 	public function addTailor(){
 		$this->load->view('navbar');

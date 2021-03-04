@@ -61,16 +61,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <a href="<?php echo base_url()?>index.php/order/viewOrder"><i class="fas fa-angle-right"></i>Manage Order</a>
                         </li>
                     </ul>
-                </li><li>
-                    <a href="#uielementsmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-comments"></i> Customer Review Analysis</a>
-                    <ul class="collapse list-unstyled" id="uielementsmenu5">
-                        <li>
-                            <a href="ui-buttons.html"><i class="fas fa-angle-right"></i> Add Customer</a>
-                        </li>
-                        <li>
-                            <a href="ui-badges.html"><i class="fas fa-angle-right"></i>Manage Customer</a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </nav>
@@ -80,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                        <div class="card-header">Customer Details</div>
+                                        <div class="card-header">Order Details</div>
                                         <div class="card-body">
                                             <p class="card-title"></p>
                                             <table class="table table-hover" id="dataTables-example" width="100%">
@@ -94,6 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <th>Contact</th>
                                                         <th>Suit Tag</th>
                                                         <th>Status</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -109,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         echo "<td>".$row->date."</td>";
                                                         echo "<td>".$row->contact."</td>";
                                                         echo "<td>".$row->tag_no."</td>";
-                                                        // echo "<td>".$row->address."</td>";
+                                                        echo "<td>"."In progress"."</td>";
                                                         echo " <td class='text-right'>
                                                                 <a  data-toggle='modal' data-target='#tailorEditModal' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
                                                                 <a  data-toggle='modal' data-target='#tailorDeleteModal'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>

@@ -33,4 +33,10 @@
         var_dump($result);
         return $result;
      }
+     public function customerCount(){
+        $this->db->where('type','2');
+        $tailor_count = $this->db->count_all('users');
+        return $tailor_count;
+     }
+
  }

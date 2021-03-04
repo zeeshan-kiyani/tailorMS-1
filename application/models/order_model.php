@@ -30,11 +30,8 @@
          $output=$this->db->get('dress_order')->result();
          return $output;
      }
-    //  public function blockCustomerUser($id)
-    //  {
-    //     $this->db->where('id',$id);
-    //     $result=$this->db->delete('users');
-    //     var_dump($result);
-    //     return $result;
-    //  }
+     public function orderCount(){
+        $order_count = $this->db->count_all('dress_order');
+        return $order_count;
+     }
  }

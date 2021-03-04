@@ -34,4 +34,9 @@
         $result=$this->db->delete('users');
         return $result;
      }
+     public function tailorCount(){
+        $this->db->where('type',2);
+        $tailor_count = $this->db->count_all('users');
+        return $tailor_count;
+     }
  }

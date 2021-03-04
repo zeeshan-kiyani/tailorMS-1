@@ -97,7 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="col-sm-8">
                                             <div class="detail">
                                                 <p class="detail-subtitle">Total Tailor</p>
-                                                <span class="number">0</span>
+                                                <span class="number"><?php echo $tailor_count ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -122,7 +122,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="col-sm-8">
                                             <div class="detail">
                                                 <p class="detail-subtitle">Total Customer</p>
-                                                <span class="number">0</span>
+                                                <span class="number"><?php echo $customer_count ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -147,7 +147,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="col-sm-8">
                                             <div class="detail">
                                                 <p class="detail-subtitle">Total Dress</p>
-                                                <span class="number">0</span>
+                                                <span class="number"><?php echo $dress_count ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -172,7 +172,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="col-sm-8">
                                             <div class="detail">
                                                 <p class="detail-subtitle">Total Order</p>
-                                                <span class="number">0</span>
+                                                <span class="number"><?php echo $order_count ?></span>
                                             </div>
                                         </div>
                                     </div>

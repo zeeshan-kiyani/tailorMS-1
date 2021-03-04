@@ -30,11 +30,8 @@
          $output=$this->db->get('dress')->result();
          return $output;
      }
-    //  public function blockCustomerUser($id)
-    //  {
-    //     $this->db->where('id',$id);
-    //     $result=$this->db->delete('users');
-    //     var_dump($result);
-    //     return $result;
-    //  }
+     public function dressCount(){
+        $dress_count = $this->db->count_all('dress');
+        return $dress_count;
+     }
  }
