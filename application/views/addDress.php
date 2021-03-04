@@ -86,14 +86,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
                                     <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
                                         <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                                <label for="state">Select Customer</label>
-                                                <select name="state" class="form-control" required="">
-                                                    <option value="" selected="">Choose...</option>
-                                                    <option value="1">Zeeshan</option>
-                                                    <option value="2">Ali</option>
-                                                </select>
+                                        <div class="form-group col-md-6">
+                                            <label for="customer">Select Customer</label>
+                                            <select name="customer" class="form-control" required="">
+                                                <option value="" selected="true" disabled="disabled">Choose...</option>
+                                                <?php
+                                                foreach($customer as $row){
+                                                    echo "<option value=".$row->id.">".$row->name."</option>";
+                                                }
+                                                ?>
+                                            </select>
                                             </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="tag_no">Tag No</label>
+                                                <input type="text" class="form-control" name="tag_no" placeholder="Tag No" required="">
+                                        </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
@@ -107,8 +114,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
-                                                <label for="name">Hip</label>
-                                                <input type="text" class="form-control" name="name" placeholder="Hip" required="">
+                                                <label for="hip">Hip</label>
+                                                <input type="text" class="form-control" name="hip" placeholder="Hip" required="">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="sleeve">Sleeve</label>
@@ -116,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="insteam">Instream</label>
-                                            <input type="text" class="form-control" name="instream" placeholder="Instream" required="">
+                                            <input type="text" class="form-control" name="insteam" placeholder="Instream" required="">
                                         </div>
                                         <!-- date time here -->
                                         <!-- <div class="form-group col-md-6">

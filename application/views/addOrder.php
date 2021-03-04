@@ -86,28 +86,49 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
                                     <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
                                         <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                                <label for="dress">Select Dress</label>
+                                                <select name="dress" class="form-control" required="">
+                                                    <option value="" selected="true" disabled="disabled">Choose...</option>
+                                                    <?php
+                                                    foreach($dress as $row){
+                                                        echo "<option value=".$row->id.">".$row->tag_no."</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
                                             <div class="form-group col-md-6">
                                                 <label for="customer">Select Customer</label>
                                                 <select name="customer" class="form-control" required="">
-                                                    <option value="" selected="">Choose...</option>
-                                                    <option value="1">Zeeshan</option>
-                                                    <option value="2">Ali</option>
+                                                    <option value="" selected="true" disabled="disabled">Choose...</option>
+                                                    <?php
+                                                    foreach($customer as $row){
+                                                        echo "<option value=".$row->id.">".$row->name."</option>";
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div>
-                                            <div class="form-group col-md-6">
+                                           
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                        <div class="form-group col-md-6">
                                                 <label for="tailor">Select Tailor</label>
                                                 <select name="tailor" class="form-control" required="">
                                                     <option value="" selected="">Choose...</option>
-                                                    <option value="1">Zeeshan</option>
-                                                    <option value="2">Ali</option>
+                                                    <?php
+                                                    foreach($tailor as $row){
+                                                        echo "<option value=".$row->id.">".$row->name."</option>";
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div>
+                                        <div class="form-group col-md-6">
+                                                <label for="date">Return Date</label>
+                                                <input type="text" class="form-control" name="date" placeholder="Name" required="">
+                                        </div>
                                         </div>
                                         <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                                <label for="name">Return Date</label>
-                                                <input type="text" class="form-control" name="name" placeholder="Name" required="">
-                                        </div>
                                         <div class="form-group col-md-6">
                                             <label for="cost">Cost</label>
                                             <input type="cost" class="form-control" name="cost" placeholder="" required="">
