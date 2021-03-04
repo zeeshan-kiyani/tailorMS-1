@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <nav id="sidebar" class="">
             <ul class="list-unstyled components text-secondary">
                 <li>
-                    <a href="<?php echo base_url() ?>index.php/dashboard"><i class="fas fa-chalkboard-teacher"></i> Dashboard</a>
+                    <a href="<?php echo base_url() ?>index.php/dashboard/dashboardStats"><i class="fas fa-chalkboard-teacher"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="#uielementsmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-users"></i> Customer Management</a>

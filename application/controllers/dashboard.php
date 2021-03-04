@@ -5,6 +5,7 @@ class dashboard extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->database();
 		$this->load->model('customer_model');
 		$this->load->model('tailor_model');
 		$this->load->model('dress_model');
@@ -12,14 +13,22 @@ class dashboard extends CI_Controller {
     }
 	public function index()
 	{
-		$this->dashboardStats();	
-		// $data['dashboard'] = $this->load->view('dashboard', '', TRUE);
-		// $this->data['dashboard'] = 'dashboard';
-        // $this->load->view('layouts/layout', $this->data);
-		// $data['controller']="dashboard"
-		// $this->load->helper('url');;
-		// $this->load->view('navbar');
-		// $this->load->view('dashboard');
+		if($this->input->post('login'))
+		{
+			$email=$this->input->post('email');
+			$password=$this->input->post('password');
+			$que=$this->db->query("select * from users where email='$email' and password='$password'");
+			$row = $que->num_rows();
+			if($row>0)
+			{
+				redirect('dashboard/dashboardStats');
+			}
+			else
+			{
+				$data['error']="<small style='color:red'>Invalid userid or password !</small>";
+			}
+		}
+		$this->load->view('login',@$data);
 	}
 	public function dashboardStats()
 	{

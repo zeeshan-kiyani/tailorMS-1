@@ -22,7 +22,6 @@ class customer extends CI_Controller {
 			$data['name']=$this->input->post('name');
 			$data['contact']=$this->input->post('contact');
 			$data['type']=$this->input->post('type');
-            var_dump($data);
             $user=$this->customer_model->insertCustomerData($data);
 			if($user>0){
 			        echo "Records Saved Successfully";
@@ -38,11 +37,8 @@ class customer extends CI_Controller {
 		$this->load->view('manageCustomer', $resp);
     }
     public function blockCustomer(){
-        echo "coming";
 		$id=$this->input->get('id');
-        var_dump($id);
 		$resp = $this->customer_model->blockCustomerUser($id);
-        var_dump($resp);
 		echo "Record Deleted Succesfully";
 	}
     

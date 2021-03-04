@@ -18,8 +18,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="wrapper">
     <nav id="sidebar" class="">
             <ul class="list-unstyled components text-secondary">
-                <li>
-                    <a href="<?php echo base_url() ?>index.php/dashboard"><i class="fas fa-chalkboard-teacher"></i> Dashboard</a>
+            <li>
+                    <a href="<?php echo base_url() ?>index.php/dashboard/dashboardStats"><i class="fas fa-chalkboard-teacher"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="#uielementsmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-users"></i> Customer Management</a>
@@ -62,16 +62,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <a href="<?php echo base_url()?>index.php/order/viewOrder"><i class="fas fa-angle-right"></i>Manage Order</a>
                         </li>
                     </ul>
-                </li><li>
-                    <a href="#uielementsmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-comments"></i> Customer Review Analysis</a>
-                    <ul class="collapse list-unstyled" id="uielementsmenu5">
-                        <li>
-                            <a href="ui-buttons.html"><i class="fas fa-angle-right"></i> Add Customer</a>
-                        </li>
-                        <li>
-                            <a href="ui-badges.html"><i class="fas fa-angle-right"></i>Manage Customer</a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </nav>
@@ -88,27 +78,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="email">Email</label>
-                                                <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                                <input type="email" class="form-control" name="email" placeholder="Email" required="required"/>
                                                 <small class="form-text text-muted">Enter a valid email address.</small>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="password">Password</label>
-                                                <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                                                <input type="password" class="form-control" name="password" placeholder="Password" required="required"/>
                                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="address">Address</label>
-                                            <input type="text" class="form-control" name="address" placeholder="1234 Main St, Unit, Building, or Floor" required="">
+                                            <input type="text" class="form-control" name="address" placeholder="1234 Main St, Unit, Building, or Floor" required="required"/>
                                         </div>
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
                                                 <label for="name">Name</label>
-                                                <input type="text" class="form-control" name="name" placeholder="Name" required="">
+                                                <input type="text" class="form-control" name="name" placeholder="Name" required="required"/>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="email">Contact</label>
-                                            <input type="email" class="form-control" name="contact" placeholder="" required="">
+                                            <input type="email" class="form-control" name="contact" placeholder="" required="required"/>
                                             <small class="form-text text-muted">Enter a valid contact format(03xx-xxxxxxx)</small>
                                         </div>
                                         

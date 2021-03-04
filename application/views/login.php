@@ -26,28 +26,20 @@
                         <h3>Tailor Management System</h3>
                     </div>
                     <h6 class="mb-4 text-muted">Login to your account</h6>
-                    <form action="" method="">
+                    <form  method="post">
                         <div class="form-group text-left">
-                            <label for="email">Email adress</label>
-                            <input type="email" class="form-control" placeholder="Enter Email" >
+                            <label for="email">Email address</label>
+                            <input type="email" name="email" class="form-control" placeholder="Enter Email" >
                         </div>
                         <div class="form-group text-left">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" placeholder="Password" >
+                            <input type="password" name="password" class="form-control" placeholder="Password" >
                         </div>
                         <div class="form-group text-left">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" name="remember" class="custom-control-input" id="remember-me">
-                                <label class="custom-control-label" for="remember-me">Remember me on this device</label>
-                            </div>
+                            <label><?php echo @$error; ?></label>
                         </div>
-                        <a class="btn btn-primary   "     href="<?php echo base_url()?>index.php/dashboard">
-                        login
-                            <!-- <button class="btn btn-primary shadow-2 mb-4"  href="<?php echo base_url()?>index.php/dashboard" >Login</button> -->
-                        </a>
+                        <input type="submit" class='btn btn-primary' name="login" value="Login"/></td>
                     </form>
-                    <p class="mb-2 text-muted">Forgot password? <a href="forgot-password.html">Reset</a></p>
-                    <p class="mb-0 text-muted">Don't have account yet? <a href="signup.html">Signup</a></p>
                 </div>
             </div>
         </div>

@@ -12,14 +12,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?php echo base_url() ?>assets/css/master.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/vendor/chartsjs/Chart.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
-
+    <link href="<?php echo base_url() ?>assets/vendor/airdatepicker/dist/css/datepicker.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/vendor/mdtimepicker/mdtimepicker.min.css" rel="stylesheet">
+    <style>
+        /* inline style for mdtimepicker demo */
+        .mdtp__wrapper.inline {display: block !important;position: relative;box-shadow: none;border: 1px solid #E0E0E0;max-width: 300px;margin: 0 !important;padding: 0 !important;transform: inherit;left: 0;top: 0;}
+        .mdtp__wrapper.inline .mdtp__time_holder {width: auto;}
+    </style>
 </head>
 <body>
     <div class="wrapper">
     <nav id="sidebar" class="">
             <ul class="list-unstyled components text-secondary">
                 <li>
-                    <a href="<?php echo base_url() ?>index.php/dashboard"><i class="fas fa-chalkboard-teacher"></i> Dashboard</a>
+                    <a href="<?php echo base_url() ?>index.php/dashboard/dashboardStats"><i class="fas fa-chalkboard-teacher"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="#uielementsmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-users"></i> Customer Management</a>
@@ -60,16 +66,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                         <li>
                             <a href="<?php echo base_url()?>index.php/order/viewOrder"><i class="fas fa-angle-right"></i>Manage Order</a>
-                        </li>
-                    </ul>
-                </li><li>
-                    <a href="#uielementsmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-comments"></i> Customer Review Analysis</a>
-                    <ul class="collapse list-unstyled" id="uielementsmenu5">
-                        <li>
-                            <a href="ui-buttons.html"><i class="fas fa-angle-right"></i> Add Customer</a>
-                        </li>
-                        <li>
-                            <a href="ui-badges.html"><i class="fas fa-angle-right"></i>Manage Customer</a>
                         </li>
                     </ul>
                 </li>
@@ -125,7 +121,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </div>
                                         <div class="form-group col-md-6">
                                                 <label for="date">Return Date</label>
-                                                <input type="text" class="form-control" name="date" placeholder="Name" required="">
+                                                <input type="text"  name="date" class="form-control datepicker-here" data-language="en" aria-describedby="datepicker" placeholder="Date picker">
+                                                <!-- <input type='text' class='datepicker-here'  data-language='en' /> -->
+                                                <!-- <input type="text" class="form-control" name="date" placeholder="Name" required=""> -->
                                         </div>
                                         </div>
                                         <div class="form-row">
@@ -150,5 +148,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?php echo base_url() ?>ssets/vendor/chartsjs/Chart.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/dashboard-charts.js"></script>
     <script src="<?php echo base_url() ?>assets/js/script.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/airdatepicker/dist/js/datepicker.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/airdatepicker/dist/js/i18n/datepicker.en.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/mdtimepicker/mdtimepicker.min.js"></script>
+    <script type="text/javascript">
+    // Initiate time picker
+    mdtimepicker('.timepicker', { format: 'h:mm tt', hourPadding: 'true' });
+    </script>
 </body>
 </html>
