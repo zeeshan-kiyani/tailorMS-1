@@ -87,56 +87,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <thead>
                                                     <tr>
                                                         <th>No.</th>
-                                                        <th>Customer Name</th>
-                                                        <th>Tailor Name</th>
+                                                        <!-- <th>Customer Name</th> -->
+                                                        <th>Assigned to</th>
                                                         <th>Cost</th>
                                                         <th>Return Date</th>
+                                                        <th>Contact</th>
+                                                        <th>Suit Tag</th>
                                                         <th>Status</th>
-                                                        <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <!-- <?php
-                                                    // $i=1;
-                                                    // foreach($data as $row)
-                                                    // {
-                                                        // echo "<tr>";
-                                                        // echo "<td>".$i."</td>";
+                                                    <?php
+                                                    $i=1;
+                                                    foreach($orderData as $row)
+                                                    {
+                                                        echo "<tr>";
+                                                        echo "<td>".$i."</td>";
                                                         // echo "<td>".$row->name."</td>";
-                                                        // echo "<td>".$row->email."</td>";
-                                                        // echo "<td>".$row->password."</td>";
-                                                        // echo "<td>".$row->contact."</td>";
+                                                        echo "<td>".$row->name."</td>";
+                                                        echo "<td>".$row->cost."</td>";
+                                                        echo "<td>".$row->date."</td>";
+                                                        echo "<td>".$row->contact."</td>";
+                                                        echo "<td>".$row->tag_no."</td>";
                                                         // echo "<td>".$row->address."</td>";
-                                                        // echo " <td class='text-right'>
-                                                        //         <a  data-toggle='modal' data-target='#tailorEditModal' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
-                                                        //         <a  data-toggle='modal' data-target='#tailorDeleteModal'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
-                                                        //         <div id='tailorDeleteModal' class='modal fade' role='dialog'>
-                                                        //             <div class='modal-dialog'>
-                                                        //                 <!-- Modal content-->
-                                                        //                 <div class='modal-content'>
-                                                        //                 <div class='modal-header'>
-                                                        //                     <h4 class='modal-title'>Block Tailor</h4>
-                                                        //                     <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                                                        //                 </div>
-                                                        //                 <div class='modal-body block-modal-body' style='text-align: justify'>
-                                                        //                     <p>Are You sure your want to block this tailor?</p>
-                                                        //                 </div>
-                                                        //                 <div class='modal-footer'>
-                                                        //                     <a type='button' href='".base_url()."index.php/dashboard/blockTailor?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Block</a>
-                                                        //                     <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
-                                                        //                 </div>
-                                                        //                 </div>
+                                                        echo " <td class='text-right'>
+                                                                <a  data-toggle='modal' data-target='#tailorEditModal' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
+                                                                <a  data-toggle='modal' data-target='#tailorDeleteModal'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
+                                                                <div id='tailorDeleteModal' class='modal fade' role='dialog'>
+                                                                    <div class='modal-dialog'>
+                                                                        <!-- Modal content-->
+                                                                        <div class='modal-content'>
+                                                                        <div class='modal-header'>
+                                                                            <h4 class='modal-title'>Block Tailor</h4>
+                                                                            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                                                        </div>
+                                                                        <div class='modal-body block-modal-body' style='text-align: justify'>
+                                                                            <p>Are You sure your want to block this tailor?</p>
+                                                                        </div>
+                                                                        <div class='modal-footer'>
+                                                                            <a type='button' href='".base_url()."index.php/dashboard/blockTailor?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Block</a>
+                                                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                                                        </div>
+                                                                        </div>
                 
-                                                        //             </div>
-                                                        //         </div>
-                                                        //     </td>";
+                                                                    </div>
+                                                                </div>
+                                                            </td>";
                                                      
-                                                        // echo "</tr>";
-                                                        // $i++;
+                                                        echo "</tr>";
+                                                        $i++;
                                                         
-                                                    // }
+                                                    }
                                                     
-                                                    // ?> -->
+                                                    ?>
                                                 </tbody>
                                                 <!-- Modal -->
                                                 <div id="tailorEditModal" class="modal fade" role="dialog">

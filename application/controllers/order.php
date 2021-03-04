@@ -38,8 +38,8 @@ class order extends CI_Controller {
 		}
     }
     public function viewOrder(){
-        $this->load->helper('url');;
+        $data['orderData']  = $this->order_model->dress_order_data();
         $this->load->view('navbar');
-        $this->load->view('manageOrder');
+        $this->load->view('manageOrder',$data);
     }
 }

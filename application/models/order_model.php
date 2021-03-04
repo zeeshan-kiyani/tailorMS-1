@@ -10,7 +10,7 @@
          //tailor
          //dress
         // $this->db->where('type',$customer_type);
-         $output=$this->db->query('SELECT * FROM `dress` d INNER JOIN users u on u.id = d.customer_id')->result();
+         $output=$this->db->query('SELECT * FROM `dress_order` o INNER JOIN dress d on d.id=o.dress_id INNER JOIN users t on t.id=o.tailor_id')->result();
          return $output;
      }
      public function dress_data(){
