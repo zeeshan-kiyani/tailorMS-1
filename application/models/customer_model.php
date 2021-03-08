@@ -30,7 +30,6 @@
      {
         $this->db->where('id',$id);
         $result=$this->db->delete('users');
-        var_dump($result);
         return $result;
      }
      public function customerCount(){

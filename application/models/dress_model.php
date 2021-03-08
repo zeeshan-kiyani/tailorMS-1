@@ -6,18 +6,10 @@
      }
 
      public function dress_all_data(){
-         //customer
-         //tailor
-         //dress
-        // $this->db->where('type',$customer_type);
-         $output=$this->db->query('SELECT * FROM `dress` d INNER JOIN users u on u.id = d.customer_id')->result();
+         $output=$this->db->query('SELECT d.tag_no,d.waist,d.hip,d.insteam,d.sleeve,d.id,d.chest,u.name,u.contact FROM `dress` d INNER JOIN users u on u.id = d.customer_id')->result();
          return $output;
      }
      public function dress_data(){
-        //customer
-        //tailor
-        //dress
-       // $this->db->where('type',$customer_type);
         $output=$this->db->query('SELECT * FROM `dress`')->result();
         return $output;
     }
@@ -33,5 +25,10 @@
      public function dressCount(){
         $dress_count = $this->db->count_all('dress');
         return $dress_count;
+     }
+     public function deleteDress($id){
+        $this->db->where('id',$id);
+        $result=$this->db->delete('dress');
+        return $result;
      }
  }

@@ -99,8 +99,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         echo "<td>".$row->address."</td>";
                                                         echo " <td class='text-right'>
                                                                 <a  data-toggle='modal' data-target='#tailorEditModal' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
-                                                                <a  data-toggle='modal' data-target='#tailorDeleteModal'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
-                                                                <div id='tailorDeleteModal' class='modal fade' role='dialog'>
+                                                                <a  data-toggle='modal' data-target='#tailorDeleteModal".$row->id."'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
+                                                                <div id='tailorDeleteModal".$row->id."' class='modal fade' role='dialog'>
                                                                     <div class='modal-dialog'>
                                                                         <!-- Modal content-->
                                                                         <div class='modal-content'>

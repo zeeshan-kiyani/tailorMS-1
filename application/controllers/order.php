@@ -42,4 +42,13 @@ class order extends CI_Controller {
         $this->load->view('navbar');
         $this->load->view('manageOrder',$data);
     }
+	public function completeOrder(){
+			$id=$this->input->get('id');
+			$resp = $this->order_model->markOrderComplete($id);
+			$data['orderData']  = $this->order_model->dress_order_data();
+			$data['order_update_msg'] = "Order Completed Succesfully";
+			$this->load->view('navbar');	
+			$this->load->view('manageOrder',$data);			
+    }
+	
 }

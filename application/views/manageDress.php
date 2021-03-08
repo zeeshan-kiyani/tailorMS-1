@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                        <div class="card-header">Customer Details</div>
+                                        <div class="card-header">Dress Details</div>
                                         <div class="card-body">
                                             <p class="card-title"></p>
                                             <table class="table table-hover" id="dataTables-example" width="100%">
@@ -107,28 +107,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         echo " <td class='text-right'>
                                                                 <a  data-toggle='modal' data-target='#tailorEditModal' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
                                                             </td>";
-                                                            echo " <td class='text-right'>
-                                                                <a  data-toggle='modal' data-target='#tailorDeleteModal'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
-                                                                <div id='tailorDeleteModal' class='modal fade' role='dialog'>
-                                                                    <div class='modal-dialog'>
-                                                                        <!-- Modal content-->
-                                                                        <div class='modal-content'>
-                                                                        <div class='modal-header'>
-                                                                            <h4 class='modal-title'>Delete Dress</h4>
-                                                                            <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                                                                        </div>
-                                                                        <div class='modal-body block-modal-body' style='text-align: justify'>
-                                                                            <p>Are You sure your want to delete this dress?</p>
-                                                                        </div>
-                                                                        <div class='modal-footer'>
-                                                                            <a type='button' href='".base_url()."index.php/dashboard/blockTailor?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Block</a>
-                                                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
-                                                                        </div>
-                                                                        </div>
-                
+                                                        echo " <td class='text-right'>
+                                                            <a  data-toggle='modal' data-target='#dressDeleteModal".$row->id."'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
+                                                            <div id='dressDeleteModal".$row->id."' class='modal fade' role='dialog'>
+                                                                <div class='modal-dialog'>
+                                                                    <!-- Modal content-->
+                                                                    <div class='modal-content'>
+                                                                    <div class='modal-header'>
+                                                                        <h4 class='modal-title'>Delete Dress</h4>
+                                                                        <button type='button' class='close' data-dismiss='modal'>&times;</button>
                                                                     </div>
+                                                                    <div class='modal-body block-modal-body' style='text-align: justify'>
+                                                                        <p>Are You sure your want to delete this dress?</p>
+                                                                    </div>
+                                                                    <div class='modal-footer'>
+                                                                        <a type='button' href='".base_url()."index.php/dress/deleteDress?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Delete</a>
+                                                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                                                    </div>
+                                                                    </div>
+            
                                                                 </div>
-                                                            </td>";
+                                                            </div>
+                                                        </td>";
                                                      
                                                         echo "</tr>";
                                                         $i++;

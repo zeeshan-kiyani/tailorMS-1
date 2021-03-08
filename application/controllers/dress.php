@@ -14,8 +14,8 @@ class dress extends CI_Controller {
 	}
     public function addDress(){
         $this->load->view('navbar');
-        $data['customer']=$this->customer_model->getAllCustomer();
-		$this->load->view('addDress',$data);
+        $resp['customer']=$this->customer_model->getAllCustomer();
+		$this->load->view('addDress',$resp);
 		if($this->input->post('save'))
 		{
 			$data['chest']=$this->input->post('chest');
@@ -39,4 +39,12 @@ class dress extends CI_Controller {
         $this->load->view('navbar');
         $this->load->view('manageDress',$data);
     }
+	public function deleteDress(){
+		$id=$this->input->get('id');
+		$resp = $this->dress_model->deleteDress($id);
+		$data['dress']=$this->dress_model->dress_all_data();
+        $this->load->view('navbar');
+        $this->load->view('manageDress',$data);
+		echo "Dress Deleted Succesfully";
+	}
 }

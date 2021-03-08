@@ -10,7 +10,7 @@
          //tailor
          //dress
         // $this->db->where('type',$customer_type);
-         $output=$this->db->query('SELECT * FROM `dress_order` o INNER JOIN dress d on d.id=o.dress_id INNER JOIN users t on t.id=o.tailor_id')->result();
+         $output=$this->db->query('SELECT t.name,o.cost,o.date,o.status,o.id,t.name,t.contact,d.tag_no FROM `dress_order` o INNER JOIN dress d on d.id=o.dress_id INNER JOIN users t on t.id=o.tailor_id')->result();
          return $output;
      }
      public function dress_data(){
@@ -34,4 +34,11 @@
         $order_count = $this->db->count_all('dress_order');
         return $order_count;
      }
+     public function markOrderComplete($id){
+        $this->db->set('status', '2');
+        $this->db->where('id', $id);
+        $this->db->update('dress_order');
+     }
+     
+     
  }

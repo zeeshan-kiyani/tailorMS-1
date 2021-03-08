@@ -92,6 +92,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     $i=1;
                                                     foreach($orderData as $row)
                                                     {
+                                                        if($row->status == 1){ $status = "Pending";}
+                                                        else{ $status = "Completed"; }
                                                         echo "<tr>";
                                                         echo "<td>".$i."</td>";
                                                         // echo "<td>".$row->name."</td>";
@@ -100,9 +102,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         echo "<td>".$row->date."</td>";
                                                         echo "<td>".$row->contact."</td>";
                                                         echo "<td>".$row->tag_no."</td>";
-                                                        echo "<td>"."In progress"."</td>";
+                                                        echo "<td>".$status."</td>";
                                                         echo " <td class='text-right'>
-                                                                <a  data-toggle='modal' data-target='#tailorEditModal' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
+                                                                <a  data-toggle='modal' data-target='#orderEditModal".$row->id."' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
+                                                                <div id='orderEditModal".$row->id."' class='modal fade' role='dialog'>
+                                                                <div class='modal-dialog'>
+                                                                    <!-- Modal content-->
+                                                                    <div class='modal-content'>
+                                                                    <div class='modal-header'>
+                                                                        <h4 class='modal-title'>Mark order complete</h4>
+                                                                        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                                                    </div>
+                                                                    <div class='modal-body block-modal-body' style='text-align: justify'>
+                                                                        <p>Mark this order as complete?</p>
+                                                                    </div>
+                                                                    <div class='modal-footer'>
+                                                                        <a type='button' href='".base_url()."index.php/order/completeOrder/?id=".$row->id."' class='btn btn-success'  >Complete</a>
+                                                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                                                    </div>
+                                                                    <div></div>
+                                                                    </div>
+            
+                                                                </div>
                                                                 <a  data-toggle='modal' data-target='#tailorDeleteModal'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
                                                                 <div id='tailorDeleteModal' class='modal fade' role='dialog'>
                                                                     <div class='modal-dialog'>
@@ -123,6 +144,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                                                                     </div>
                                                                 </div>
+                                                               
+                                                                </div>
                                                             </td>";
                                                      
                                                         echo "</tr>";
@@ -133,60 +156,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     ?>
                                                 </tbody>
                                                 <!-- Modal -->
-                                                <div id="tailorEditModal" class="modal fade" role="dialog">
-                                                    <div class="modal-dialog">
-                                                        <!-- Modal content-->
-                                                        <div class="modal-content">
-                                                        <div class="modal-header">
-                                                        <h4 class="modal-title">Modify Tailor</h4>
-
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                        <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-6">
-                                                                    <label for="email">Email</label>
-                                                                    <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                                                                </div>
-                                                                <div class="form-group col-md-6">
-                                                                    <label for="password">Password</label>
-                                                                    <input type="password" class="form-control" name="password" placeholder="Password" required="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="address">Address</label>
-                                                                <input type="text" class="form-control" name="address" placeholder="1234 Main St, Unit, Building, or Floor" required="">
-                                                            </div>
-                                                            <div class="form-row">
-                                                            <div class="form-group col-md-6">
-                                                                    <label for="name">Name</label>
-                                                                    <input type="text" class="form-control" name="name" placeholder="Name" required="">
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                <label for="email">Contact</label>
-                                                                <input type="email" class="form-control" name="contact" placeholder="" required="">
-                                                            </div>
-                                                            
-                                                            </div>
-                                                            <!--Hidden field for type -->
-                                                            <div class="form-group col-md-6">
-                                                                    <input type="hidden" class="form-control" name="type"  value="1" />
-                                                            </div>
-                                                        
-                                                        </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <input type="submit" name="save" class="btn btn-primary"/>
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
+                                    
                                  
                                                 <!--Modal close here -->
                                             </table>
+                                            <small><?php echo @$order_update_msg ?></small>
                                         </div>
                                     </div>
                             </div>

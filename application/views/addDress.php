@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="customer">Select Customer</label>
-                                            <select name="customer" class="form-control" required="">
+                                            <select name="customer_id" class="form-control" required="">
                                                 <option value="" selected="true" disabled="disabled">Choose...</option>
                                                 <?php
                                                 foreach($customer as $row){
