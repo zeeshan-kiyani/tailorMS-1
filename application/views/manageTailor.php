@@ -112,7 +112,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                             <p>Are You sure your want to block this tailor?</p>
                                                                         </div>
                                                                         <div class='modal-footer'>
-                                                                            <a type='button' href='".base_url()."index.php/dashboard/blockTailor?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Block</a>
+                                                                            <a type='button' href='".base_url()."index.php/dashboard/blockTailor?id=".$row->id."' class='btn btn-danger' >Block</a>
                                                                             <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
                                                                         </div>
                                                                         </div>
@@ -128,6 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     
                                                     ?>
                                                 </tbody>
+                                                <?php echo @$delete_msg ?>
                                                 <!-- Modal -->
                                                 <div id="tailorEditModal" class="modal fade" role="dialog">
                                                     <div class="modal-dialog">

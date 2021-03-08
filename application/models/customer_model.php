@@ -6,7 +6,7 @@
      }
 
      public function customer_all_data(){
-        $customer_type=2;
+        $customer_type=3;
         $this->db->where('type',$customer_type);
          $output=$this->db->get('users')->result();
          return $output;
@@ -21,7 +21,7 @@
          return $output;
      }
      public function getAllCustomer(){
-        $this->db->where('type','2');
+        $this->db->where('type','3');
         $this->db->where('is_enable','1');
         $output=$this->db->get('users')->result();
         return $output;
@@ -33,7 +33,7 @@
         return $result;
      }
      public function customerCount(){
-        $this->db->where('type','2');
+        $this->db->where('type','3');
         $tailor_count = $this->db->count_all('users');
         return $tailor_count;
      }

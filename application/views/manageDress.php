@@ -121,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                         <p>Are You sure your want to delete this dress?</p>
                                                                     </div>
                                                                     <div class='modal-footer'>
-                                                                        <a type='button' href='".base_url()."index.php/dress/deleteDress?id=".$row->id."' class='btn btn-danger' data-dismiss='modal' >Delete</a>
+                                                                        <a type='button' href='".base_url()."index.php/dress/deleteDress?id=".$row->id."' class='btn btn-danger'>Delete</a>
                                                                         <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
                                                                     </div>
                                                                     </div>

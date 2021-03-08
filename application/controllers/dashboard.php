@@ -17,11 +17,16 @@ class dashboard extends CI_Controller {
 		{
 			$email=$this->input->post('email');
 			$password=$this->input->post('password');
-			$que=$this->db->query("select * from users where email='$email' and password='$password'");
-			$row = $que->num_rows();
-			if($row>0)
+			$que=$this->db->query("select * from users where email='$email' and password='$password'")->row();
+			$this->session->set_userdata('userType', $que->type);
+			$this->session->set_userdata('userId', $que->id);
+			if($que->id > 0)
 			{
-				redirect('dashboard/dashboardStats');
+				if($que->type ==2 ){
+					redirect('order/viewOrder');
+				}else{
+					redirect('dashboard/dashboardStats');
+				}
 			}
 			else
 			{
@@ -32,6 +37,7 @@ class dashboard extends CI_Controller {
 	}
 	public function dashboardStats()
 	{
+		$data['usertype'] = $this->session->userdata('userType');
 		$data['customer_count'] = $this->customer_model->customerCount();
 		$data['tailor_count'] = $this->tailor_model->tailorCount();
 		$data['dress_count'] = $this->dress_model->dressCount();
@@ -67,8 +73,10 @@ class dashboard extends CI_Controller {
 	
 	public function blockTailor(){
 		$id=$this->input->get('id');
-		// echo $id;
-		$resp = $this->tailor_model->blockTailorUser($id);
-		echo "Record Deleted Succesfully";
+		$data = $this->tailor_model->blockTailorUser($id);
+		$resp['data'] = $this->tailor_model->tailor_all_data();
+		$resp['delete_msg'] = "Tailor Deleted Successfully";
+		$this->load->view('navbar');
+		$this->load->view('manageTailor', $resp);
 	}
 }

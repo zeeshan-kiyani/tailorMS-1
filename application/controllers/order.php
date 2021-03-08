@@ -27,7 +27,6 @@ class order extends CI_Controller {
 			$data['tailor_id']=$this->input->post('tailor');
 			$data['date']=$this->input->post('date');
 			$data['cost']=$this->input->post('cost');
-            var_dump($data);
             $user=$this->order_model->insertOrderData($data);
 			if($user>0){
 			        echo "Records Saved Successfully";
@@ -38,6 +37,7 @@ class order extends CI_Controller {
 		}
     }
     public function viewOrder(){
+		$data['usertype'] = $this->session->userdata('userType');
         $data['orderData']  = $this->order_model->dress_order_data();
         $this->load->view('navbar');
         $this->load->view('manageOrder',$data);
@@ -46,6 +46,7 @@ class order extends CI_Controller {
 			$id=$this->input->get('id');
 			$resp = $this->order_model->markOrderComplete($id);
 			$data['orderData']  = $this->order_model->dress_order_data();
+			$data['usertype'] = $this->session->userdata('userType');
 			$data['order_update_msg'] = "Order Completed Succesfully";
 			$this->load->view('navbar');	
 			$this->load->view('manageOrder',$data);			

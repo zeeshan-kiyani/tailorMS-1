@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                         <!--Hidden field for type -->
                                         <div class="form-group col-md-6">
-                                                <input type="hidden" class="form-control" name="type"  value="2" />
+                                                <input type="hidden" class="form-control" name="type"  value="3" />
                                         </div>
                                       
                                         <input type="submit" name="save" class="btn btn-primary"/>

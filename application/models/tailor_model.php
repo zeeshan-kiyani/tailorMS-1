@@ -6,7 +6,7 @@
      }
 
      public function tailor_all_data(){
-         $tailor_type = 1;
+         $tailor_type = 2;
         $this->db->where('type',$tailor_type);
         $this->db->where('is_enable','1');
          $output=$this->db->get('users')->result();
@@ -23,7 +23,7 @@
          return $output;
      }
      public function getAllTailors(){
-        $this->db->where('type','1');
+        $this->db->where('type','2');
         $this->db->where('is_enable','1');
         $output=$this->db->get('users')->result();
         return $output;

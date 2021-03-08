@@ -16,7 +16,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     <div class="wrapper">
     <nav id="sidebar" class="">
-            <ul class="list-unstyled components text-secondary">
+    <ul class="list-unstyled components text-secondary">
+            <?php if($usertype == 1) { ?>
                 <li>
                     <a href="<?php echo base_url() ?>index.php/dashboard/dashboardStats"><i class="fas fa-chalkboard-teacher"></i> Dashboard</a>
                 </li>
@@ -41,7 +42,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <a href="<?php echo base_url()?>index.php/dashboard/viewTailor"><i class="fas fa-angle-right"></i>Manage Tailor</a>
                         </li>
                     </ul>
-                </li><li>
+                </li>
+                <li>
                     <a href="#uielementsmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-tshirt"></i> Dress Management</a>
                     <ul class="collapse list-unstyled" id="uielementsmenu3">
                         <li>
@@ -51,7 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <a href="<?php echo base_url()?>index.php/dress/viewDress"><i class="fas fa-angle-right"></i>Manage Dress</a>
                         </li>
                     </ul>
-                </li><li>
+                </li>
+                <li>
                     <a href="#uielementsmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-cart-plus"></i> Order Management</a>
                     <ul class="collapse list-unstyled" id="uielementsmenu4">
                         <li>
@@ -62,6 +65,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                     </ul>
                 </li>
+                <?php } ?>
+                <?php if($usertype == 2) { ?>
+                <li>
+                    <a href="#uielementsmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-cart-plus"></i> Order Management</a>
+                    <ul class="collapse list-unstyled" id="uielementsmenu4">
+                        <li>
+                            <a href="<?php echo base_url()?>index.php/order/viewOrder"><i class="fas fa-angle-right"></i>Manage Order</a>
+                        </li>
+                    </ul>
+                </li>
+                <?php } ?>
             </ul>
         </nav>
         <div id="body" class="">
@@ -103,6 +117,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         echo "<td>".$row->contact."</td>";
                                                         echo "<td>".$row->tag_no."</td>";
                                                         echo "<td>".$status."</td>";
+                                                        
                                                         echo " <td class='text-right'>
                                                                 <a  data-toggle='modal' data-target='#orderEditModal".$row->id."' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
                                                                 <div id='orderEditModal".$row->id."' class='modal fade' role='dialog'>

@@ -38,8 +38,11 @@ class customer extends CI_Controller {
     }
     public function blockCustomer(){
 		$id=$this->input->get('id');
-		$resp = $this->customer_model->blockCustomerUser($id);
-		echo "Record Deleted Succesfully";
+		$data = $this->customer_model->blockCustomerUser($id);
+		$resp['data'] = $this->customer_model->customer_all_data();
+		$resp['delete_msg'] = "Customer Deleted Successfully";
+		$this->load->view('navbar');
+		$this->load->view('manageCustomer', $resp);
 	}
     
 }
