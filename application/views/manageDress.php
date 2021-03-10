@@ -85,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <th>sleeve</th>
                                                         <th>Customer Name</th>
                                                         <th>Customer Contact</th>
-                                                        <th>Edit</th>
+                                                        <!-- <th>Edit</th> -->
                                                         <th>Delete</th>
                                                     </tr>
                                                 </thead>
@@ -104,10 +104,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         echo "<td>".$row->sleeve."</td>";
                                                         echo "<td>".$row->name."</td>";
                                                         echo "<td>".$row->contact."</td>";
-                                                        echo " <td class='text-right'>
-                                                                <a  data-toggle='modal' data-target='#tailorEditModal' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
-                                                            </td>";
-                                                        echo " <td class='text-right'>
+                                                        // echo " <td class='text-right'>
+                                                        //         <a  data-toggle='modal' data-target='#tailorEditModal' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
+                                                        //     </td>";
+                                                        echo " <td class='text-center'>
                                                             <a  data-toggle='modal' data-target='#dressDeleteModal".$row->id."'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
                                                             <div id='dressDeleteModal".$row->id."' class='modal fade' role='dialog'>
                                                                 <div class='modal-dialog'>

@@ -118,7 +118,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         echo "<td>".$row->tag_no."</td>";
                                                         echo "<td>".$status."</td>";
                                                         
-                                                        echo " <td class='text-right'>
+                                                        echo " <td class='text-center'>
                                                                 <a  data-toggle='modal' data-target='#orderEditModal".$row->id."' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
                                                                 <div id='orderEditModal".$row->id."' class='modal fade' role='dialog'>
                                                                 <div class='modal-dialog'>

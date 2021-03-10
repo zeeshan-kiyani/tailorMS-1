@@ -39,4 +39,21 @@
         $tailor_count = $this->db->count_all('users');
         return $tailor_count;
      }
+     public function tailor_data($id){
+      $this->db->where('id',$id);
+      $this->db->where('type','2');
+      $this->db->where('is_enable','1');
+      $output=$this->db->get('users')->row();
+      return $output;
+   }
+   public function updateTailorData($data){
+      $this->db->set('name',$data['name']);
+      $this->db->set('email',$data['email'] );
+      $this->db->set('contact',$data['contact'] );
+      $this->db->set('address',$data['address'] );
+      $this->db->set('password',$data['password'] );
+      $this->db->where('id', $data['id']);
+      $res = $this->db->update('users'); 
+      return $res;
+   }
  }

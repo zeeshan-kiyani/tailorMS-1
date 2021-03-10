@@ -82,7 +82,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <th>Password</th>
                                                         <th>Contact</th>
                                                         <th>Address</th>
-                                                        <th></th>
+                                                        <th>Edit</th>
+                                                        <th>Delete</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -97,8 +98,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         echo "<td>".$row->password."</td>";
                                                         echo "<td>".$row->contact."</td>";
                                                         echo "<td>".$row->address."</td>";
+                                                        echo "<td class='text-center'>
+                                                            <a   href='".base_url()."index.php/customer/editCustomer?id=".$row->id."'  class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
+                                                        </div>";
                                                         echo " <td class='text-right'>
-                                                                <a  data-toggle='modal' data-target='#tailorEditModal' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
                                                                 <a  data-toggle='modal' data-target='#tailorDeleteModal".$row->id."'  class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
                                                                 <div id='tailorDeleteModal".$row->id."' class='modal fade' role='dialog'>
                                                                     <div class='modal-dialog'>
@@ -160,7 +163,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                                 <label for="name">Name</label>
-                                                                <input type="text" class="form-control" name="name" placeholder="Name" required="">
+                                                                <input type="text"  class="form-control" name="name" placeholder="Name" required="">
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="email">Contact</label>

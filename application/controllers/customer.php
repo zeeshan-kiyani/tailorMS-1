@@ -46,5 +46,27 @@ class customer extends CI_Controller {
 		$this->load->view('navbar');
 		$this->load->view('manageCustomer', $resp);
 	}
-    
+    public function editCustomer(){
+		$id=$this->input->get('id');
+		$resp['customer_data'] = $this->customer_model->customer_data($id);
+		// var_dump($resp);
+		$this->load->view('navbar');
+		$this->load->view('editCustomer', $resp);
+		if($this->input->post('update'))
+		{
+			$data['id']=$this->input->post('id');
+			$data['email']=$this->input->post('email');
+			$data['password']=$this->input->post('password');
+			$data['address']=$this->input->post('address');
+			$data['name']=$this->input->post('name');
+			$data['contact']=$this->input->post('contact');
+			$data['type']=$this->input->post('type');
+            $user=$this->customer_model->updateCustomerData($data);
+			if($user){
+			        $resp['customer_msg'] =  "Records Updated Successfully";
+					$this->load->view('navbar');
+					$this->load->view('addCustomer',@$resp);
+			}
+		}
+	}
 }

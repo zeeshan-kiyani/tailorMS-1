@@ -86,4 +86,27 @@ class dashboard extends CI_Controller {
 	public function logout(){
 		redirect('dashboard/index');
 	}
+	public function editTailor(){
+		$id=$this->input->get('id');
+		$resp['customer_data'] = $this->tailor_model->tailor_data($id);
+		// var_dump($resp);
+		$this->load->view('navbar');
+		$this->load->view('editTailor', $resp);
+		if($this->input->post('update'))
+		{
+			$data['id']=$this->input->post('id');
+			$data['email']=$this->input->post('email');
+			$data['password']=$this->input->post('password');
+			$data['address']=$this->input->post('address');
+			$data['name']=$this->input->post('name');
+			$data['contact']=$this->input->post('contact');
+			$data['type']=$this->input->post('type');
+            $user=$this->tailor_model->updateTailorData($data);
+			if($user){
+			        $resp['customer_msg'] =  "Records Updated Successfully";
+					$this->load->view('navbar');
+					$this->load->view('editTailor',@$resp);
+			}
+		}
+	}
 }

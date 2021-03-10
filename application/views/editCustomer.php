@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="row">
                     <div class="col-md-12">
                        <div class="card">
-                                <div class="card-header">Edit Tailor</div>
+                                <div class="card-header">Edit Customer</div>
                                 <div class="card-body">
                                     <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
                                     <form method="post" >
@@ -79,35 +79,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="email">Email</label>
-                                                <input type="email" value="<?php echo $tailor_data->email ?>" class="form-control" name="email"  required/>
+                                                <input type="email" value="<?php echo $customer_data->email ?>" class="form-control" name="email"  required/>
                                                 <small class="form-text text-muted">Enter a valid email address.</small>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="password">Password</label>
-                                                <input type="text" class="form-control" name="password" value="<?php echo $tailor_data->password ?>" required/>
+                                                <input type="text" class="form-control" name="password" value="<?php echo $customer_data->password ?>" required/>
                                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="address">Address</label>
-                                            <input type="text" class="form-control" name="address" value="<?php echo $tailor_data->address ?>" required/>
+                                            <input type="text" class="form-control" name="address" value="<?php echo $customer_data->address ?>" required/>
                                         </div>
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
                                                 <label for="name">Name</label>
-                                                <input type="text" value="<?php echo $tailor_data->name ?>" class="form-control" name="name"  required/>
+                                                <input type="text" value="<?php echo $customer_data->name ?>" class="form-control" name="name"  required/>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="email">Contact</label>
-                                            <input type="text" value="<?php echo $tailor_data->contact ?>" class="form-control" name="contact"  required/>
+                                            <input type="text" value="<?php echo $customer_data->contact ?>" class="form-control" name="contact"  required/>
                                             <small class="form-text text-muted">Enter a valid contact format(03xx-xxxxxxx)</small>
                                         </div>
                                         
                                         </div>
                                         <!--Hidden field for type -->
                                         <div class="form-group col-md-6">
-                                                <input type="hidden" class="form-control" name="id"  value="<?php echo $tailor_data->id ?>" />
-                                                <input type="hidden" class="form-control" name="type" value="<?php echo $tailor_data->type ?>" />
+                                        
+                                                <input type="hidden" class="form-control" name="id"  value="<?php echo $customer_data->id ?>" />
+                                                <input type="hidden" class="form-control" name="type" value="<?php echo $customer_data->type ?>" />
                                         </div>
                                       
                                         <input type="submit" name="update" value='Update' class="btn btn-primary"/>
