@@ -18,14 +18,16 @@ class dashboard extends CI_Controller {
 			$email=$this->input->post('email');
 			$password=$this->input->post('password');
 			$que=$this->db->query("select * from users where email='$email' and password='$password'")->row();
-			$this->session->set_userdata('userType', $que->type);
-			$this->session->set_userdata('userId', $que->id);
-			if($que->id > 0)
+			if($que)
 			{
-				if($que->type ==2 ){
-					redirect('order/viewOrder');
-				}else{
-					redirect('dashboard/dashboardStats');
+				if($que->id > 0){
+					$this->session->set_userdata('userType', $que->type);
+					$this->session->set_userdata('userId', $que->id);
+					if($que->type ==2 ){
+						redirect('order/viewOrder');
+					}else{
+						redirect('dashboard/dashboardStats');
+					}
 				}
 			}
 			else
@@ -58,7 +60,9 @@ class dashboard extends CI_Controller {
 			$data['type']=$this->input->post('type');
 			$user=$this->tailor_model->insertTailorData($data);
 			if($user>0){
-			        echo "Records Saved Successfully";
+					$resp['tailor_msg'] =  "Records Saved Successfully";
+					$this->load->view('navbar');
+					$this->load->view('tailor',@$resp);
 			}
 			else{
 					echo "Insert error !";
@@ -78,5 +82,8 @@ class dashboard extends CI_Controller {
 		$resp['delete_msg'] = "Tailor Deleted Successfully";
 		$this->load->view('navbar');
 		$this->load->view('manageTailor', $resp);
+	}
+	public function logout(){
+		redirect('dashboard/index');
 	}
 }

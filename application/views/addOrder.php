@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="card-header">Book Order</div>
                                 <div class="card-body">
                                     <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
-                                    <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
+                                    <form  method="post"  accept-charset="utf-8">
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
                                                 <label for="dress">Select Dress</label>

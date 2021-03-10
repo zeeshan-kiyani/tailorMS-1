@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+echo @$tailor_msg;
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="card-header">Add Tailor</div>
                                 <div class="card-body">
                                     <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
-                                    <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
+                                    <form  method="post" accept-charset="utf-8">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="email">Email</label>
@@ -98,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="email">Contact</label>
-                                            <input type="email" class="form-control" name="contact" placeholder="" required="required"/>
+                                            <input type="text" class="form-control" name="contact" placeholder="" required="required"/>
                                             <small class="form-text text-muted">Enter a valid contact format(03xx-xxxxxxx)</small>
                                         </div>
                                         
@@ -109,6 +110,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                       
                                         <input type="submit" name="save" class="btn btn-primary"/>
+                                        <small><?php echo @$tailor_msg; ?></small>
                                     </form>
                                 </div>
                             </div>

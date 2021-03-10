@@ -23,8 +23,10 @@ class customer extends CI_Controller {
 			$data['contact']=$this->input->post('contact');
 			$data['type']=$this->input->post('type');
             $user=$this->customer_model->insertCustomerData($data);
-			if($user>0){
-			        echo "Records Saved Successfully";
+			if($user){
+			        $resp['customer_msg'] =  "Records Saved Successfully";
+					$this->load->view('navbar');
+					$this->load->view('addCustomer',@$resp);
 			}
 			else{
 					echo "Insert error !";

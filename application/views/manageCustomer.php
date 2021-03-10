@@ -135,43 +135,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <!-- Modal content-->
                                                         <div class="modal-content">
                                                         <div class="modal-header">
-                                                        <h4 class="modal-title">Modify Tailor</h4>
+                                                        <h4 class="modal-title">Modify Customer</h4>
 
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                         </div>
                                                         <div class="modal-body">
                                                         <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-6">
-                                                                    <label for="email">Email</label>
-                                                                    <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                                                                </div>
-                                                                <div class="form-group col-md-6">
-                                                                    <label for="password">Password</label>
-                                                                    <input type="password" class="form-control" name="password" placeholder="Password" required="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="address">Address</label>
-                                                                <input type="text" class="form-control" name="address" placeholder="1234 Main St, Unit, Building, or Floor" required="">
-                                                            </div>
-                                                            <div class="form-row">
+                                                        <div class="form-row">
                                                             <div class="form-group col-md-6">
-                                                                    <label for="name">Name</label>
-                                                                    <input type="text" class="form-control" name="name" placeholder="Name" required="">
+                                                                <label for="email">Email</label>
+                                                                <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                                                <small class="form-text text-muted">Enter a valid email address.</small>
                                                             </div>
                                                             <div class="form-group col-md-6">
-                                                                <label for="email">Contact</label>
-                                                                <input type="email" class="form-control" name="contact" placeholder="" required="">
+                                                                <label for="password">Password</label>
+                                                                <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                                                                <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
                                                             </div>
-                                                            
-                                                            </div>
-                                                            <!--Hidden field for type -->
-                                                            <div class="form-group col-md-6">
-                                                                    <input type="hidden" class="form-control" name="type"  value="1" />
-                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="address">Address</label>
+                                                            <input type="text" class="form-control" name="address" placeholder="1234 Main St, Unit, Building, or Floor" required="">
+                                                        </div>
+                                                        <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                                <label for="name">Name</label>
+                                                                <input type="text" class="form-control" name="name" placeholder="Name" required="">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="email">Contact</label>
+                                                            <input type="email" class="form-control" name="contact" placeholder="" required="">
+                                                            <small class="form-text text-muted">Enter a valid contact format(03xx-xxxxxxx)</small>
+                                                        </div>
                                                         
-                                                        </form>
+                                                        </div>
+                                                        <!--Hidden field for type -->
+                                                        <div class="form-group col-md-6">
+                                                                <input type="hidden" class="form-control" name="type"  value="3" />
+                                                        </div>
+                                                    
+                                                        <input type="submit" name="save" class="btn btn-primary"/>
+                                                    </form>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <input type="submit" name="save" class="btn btn-primary"/>

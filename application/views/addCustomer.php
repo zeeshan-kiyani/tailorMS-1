@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+echo @$customer_msg;
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,31 +75,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="card-header">Add Customer</div>
                                 <div class="card-body">
                                     <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
-                                    <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
+                                    <form method="post" >
+                                    <!-- class="needs-validation" method="post" novalidate="" accept-charset="utf-8" -->
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="email">Email</label>
-                                                <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                                <input type="email" class="form-control" name="email" placeholder="Email" required/>
                                                 <small class="form-text text-muted">Enter a valid email address.</small>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="password">Password</label>
-                                                <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                                                <input type="password" class="form-control" name="password" placeholder="Password" required/>
                                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="address">Address</label>
-                                            <input type="text" class="form-control" name="address" placeholder="1234 Main St, Unit, Building, or Floor" required="">
+                                            <input type="text" class="form-control" name="address" placeholder="1234 Main St, Unit, Building, or Floor" required/>
                                         </div>
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
                                                 <label for="name">Name</label>
-                                                <input type="text" class="form-control" name="name" placeholder="Name" required="">
+                                                <input type="text" class="form-control" name="name" placeholder="Name" required/>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="email">Contact</label>
-                                            <input type="email" class="form-control" name="contact" placeholder="" required="">
+                                            <input type="text" class="form-control" name="contact" placeholder="" required/>
                                             <small class="form-text text-muted">Enter a valid contact format(03xx-xxxxxxx)</small>
                                         </div>
                                         
@@ -109,6 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                       
                                         <input type="submit" name="save" class="btn btn-primary"/>
+                                        <small><?php echo @$customer_msg ?></small>
                                     </form>
                                 </div>
                             </div>

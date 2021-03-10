@@ -27,7 +27,7 @@ class dress extends CI_Controller {
 			$data['tag_no']=$this->input->post('tag_no');
             $user=$this->dress_model->insertDressData($data);
 			if($user>0){
-			        echo "Records Saved Successfully";
+			        echo "Re";
 			}
 			else{
 					echo "Insert error !";

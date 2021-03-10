@@ -141,43 +141,62 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <!-- Modal content-->
                                                         <div class="modal-content">
                                                         <div class="modal-header">
-                                                        <h4 class="modal-title">Modify Tailor</h4>
+                                                        <h4 class="modal-title">Modify Dress</h4>
 
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                         </div>
                                                         <div class="modal-body">
                                                         <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-6">
-                                                                    <label for="email">Email</label>
-                                                                    <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                                                                </div>
-                                                                <div class="form-group col-md-6">
-                                                                    <label for="password">Password</label>
-                                                                    <input type="password" class="form-control" name="password" placeholder="Password" required="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="address">Address</label>
-                                                                <input type="text" class="form-control" name="address" placeholder="1234 Main St, Unit, Building, or Floor" required="">
-                                                            </div>
-                                                            <div class="form-row">
-                                                            <div class="form-group col-md-6">
-                                                                    <label for="name">Name</label>
-                                                                    <input type="text" class="form-control" name="name" placeholder="Name" required="">
+                                                        <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="customer">Select Customer</label>
+                                                            <select name="customer_id" class="form-control" required="">
+                                                                <option value="" selected="true" disabled="disabled">Choose...</option>
+                                                                <?php
+                                                                foreach($customer as $row){
+                                                                    echo "<option value=".$row->id.">".$row->name."</option>";
+                                                                }
+                                                                ?>
+                                                            </select>
                                                             </div>
                                                             <div class="form-group col-md-6">
-                                                                <label for="email">Contact</label>
-                                                                <input type="email" class="form-control" name="contact" placeholder="" required="">
-                                                            </div>
-                                                            
-                                                            </div>
-                                                            <!--Hidden field for type -->
+                                                                <label for="tag_no">Tag No</label>
+                                                                <input type="text" class="form-control" name="tag_no" placeholder="Tag No" required="">
+                                                        </div>
+                                                        </div>
+                                                        <div class="form-row">
                                                             <div class="form-group col-md-6">
-                                                                    <input type="hidden" class="form-control" name="type"  value="1" />
+                                                                <label for="chest">Chest</label>
+                                                                <input type="text" class="form-control" name="chest" placeholder="Chest" required="">
                                                             </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="waist">Waist</label>
+                                                                <input type="text" class="form-control" name="waist" placeholder="Waist" required="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                                <label for="hip">Hip</label>
+                                                                <input type="text" class="form-control" name="hip" placeholder="Hip" required="">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="sleeve">Sleeve</label>
+                                                            <input type="text" class="form-control" name="sleeve" placeholder="Sleeve" required="">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="insteam">Instream</label>
+                                                            <input type="text" class="form-control" name="insteam" placeholder="Instream" required="">
+                                                        </div>
+                                                        <!-- date time here -->
+                                                        <!-- <div class="form-group col-md-6">
+                                                        <input type="text" class="form-control" data-date-end-date="0d">
+
+                                                        </div> -->
                                                         
-                                                        </form>
+                                                        </div>
+                                                        <!--Hidden field for type -->
+                                                        <!-- <input type="submit" name="save" class="btn btn-primary"/> -->
+                                                    </form>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <input type="submit" name="save" class="btn btn-primary"/>

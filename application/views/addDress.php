@@ -74,11 +74,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="card-header">Add Dress Measurement</div>
                                 <div class="card-body">
                                     <!-- <h5 class="card-title">Example form with inline field validations</h5> -->
-                                    <form class="needs-validation" method="post" novalidate="" accept-charset="utf-8">
+                                    <form  method="post"  accept-charset="utf-8">
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="customer">Select Customer</label>
-                                            <select name="customer_id" class="form-control" required="">
+                                            <select name="customer_id" class="form-control" required>
                                                 <option value="" selected="true" disabled="disabled">Choose...</option>
                                                 <?php
                                                 foreach($customer as $row){
@@ -89,13 +89,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="tag_no">Tag No</label>
-                                                <input type="text" class="form-control" name="tag_no" placeholder="Tag No" required="">
+                                                <input type="text" class="form-control" name="tag_no" placeholder="Tag No" required>
                                         </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="chest">Chest</label>
-                                                <input type="text" class="form-control" name="chest" placeholder="Chest" required="">
+                                                <input type="text" class="form-control" name="chest" placeholder="Chest" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="waist">Waist</label>
