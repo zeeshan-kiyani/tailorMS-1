@@ -95,25 +95,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="chest">Chest</label>
-                                                <input type="text" class="form-control" name="chest" placeholder="Chest" required>
+                                                <input type="number" step="0.1" class="form-control" name="chest" placeholder="Chest" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="waist">Waist</label>
-                                                <input type="text" class="form-control" name="waist" placeholder="Waist" required="">
+                                                <input type="number" step="0.1" class="form-control" name="waist" placeholder="Waist" required="">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
                                                 <label for="hip">Hip</label>
-                                                <input type="text" class="form-control" name="hip" placeholder="Hip" required="">
+                                                <input type="number" step="0.1" class="form-control" name="hip" placeholder="Hip" required="">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="sleeve">Sleeve</label>
-                                            <input type="text" class="form-control" name="sleeve" placeholder="Sleeve" required="">
+                                            <input type="number" step="0.1" class="form-control" name="sleeve" placeholder="Sleeve" required="">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="insteam">Instream</label>
-                                            <input type="text" class="form-control" name="insteam" placeholder="Instream" required="">
+                                            <label for="inteam">Inseam</label>
+                                            <input type="number" step="0.1" class="form-control" name="insteam" placeholder="Inseam" required="">
                                         </div>
                                         <!-- date time here -->
                                         <!-- <div class="form-group col-md-6">

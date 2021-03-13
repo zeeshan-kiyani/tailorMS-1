@@ -85,8 +85,10 @@ echo @$customer_msg;
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="password">Password</label>
-                                                <input type="password" class="form-control" name="password" placeholder="Password" required/>
+                                                <input type="password" class="form-control" name="password" placeholder="Password" minlength="8" required/>
                                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
+                                                                                            <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
+
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -96,11 +98,12 @@ echo @$customer_msg;
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
                                                 <label for="name">Name</label>
-                                                <input type="text" class="form-control" name="name" placeholder="Name" required/>
+                                                <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]{2,}" name="name" placeholder="Name" required/>
+                                                <small class="form-text text-muted">Your must contain letter only.</small>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="email">Contact</label>
-                                            <input type="text" class="form-control" name="contact" placeholder="" required/>
+                                            <input type="text" class="form-control" name="contact" pattern="^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$" placeholder="" required/>
                                             <small class="form-text text-muted">Enter a valid contact format(03xx-xxxxxxx)</small>
                                         </div>
                                         
