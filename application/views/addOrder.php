@@ -129,7 +129,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="cost">Cost</label>
-                                            <input type="cost" class="form-control" name="cost" placeholder="" required="">
+                                            <input type="cost" class="form-control" pattern="^[1-9][0-9]*$" name="cost" placeholder="" required="">
+                                            <small class="form-text text-muted">Cost should be in number and greater than 0.</small>
                                         </div>
                                         </div>
                                       
@@ -153,7 +154,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?php echo base_url() ?>assets/vendor/mdtimepicker/mdtimepicker.min.js"></script>
     <script type="text/javascript">
     // Initiate time picker
-    mdtimepicker('.timepicker', { format: 'h:mm tt', hourPadding: 'true' });
+    var dateToday = new Date(); 
+    mdtimepicker('.timepicker', { format: 'h:mm tt', hourPadding: 'true' , minDate: dateToday});
     </script>
 </body>
 </html>
