@@ -28,7 +28,14 @@ body {
 }
 .login-background{
     /* background-image: url('../img/login-bg.jpg'); */
-    background-image: url('https://thumbs.dreamstime.com/z/tailoring-workshop-woman-tailor-cutting-fabric-scissors-table-87359748.jpg');
+    background-image: url('https://2va8xk2orpxt48gmu9bd2nl6-wpengine.netdna-ssl.com/wp-content/uploads/2015/08/custom-tailoring-846x564.jpg');
+      /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .wrapper {
     position: relative;

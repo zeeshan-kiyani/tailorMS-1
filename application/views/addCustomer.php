@@ -87,8 +87,6 @@ echo @$customer_msg;
                                                 <label for="password">Password</label>
                                                 <input type="password" class="form-control" name="password" placeholder="Password" minlength="8" required/>
                                                 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
-                                                                                            <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers only.</small>
-
                                             </div>
                                         </div>
                                         <div class="form-group">
