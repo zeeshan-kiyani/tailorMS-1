@@ -121,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </div>
                                         <div class="form-group col-md-6">
                                                 <label for="date">Return Date</label>
-                                                <input type="text"  name="date" class="form-control datepicker-here" data-language="en" aria-describedby="datepicker" placeholder="Date picker">
+                                                <input type="text" id="date" name="date" class="form-control datepicker-here" data-language="en" aria-describedby="datepicker" placeholder="Date picker">
                                                 <!-- <input type='text' class='datepicker-here'  data-language='en' /> -->
                                                 <!-- <input type="text" class="form-control" name="date" placeholder="Name" required=""> -->
                                         </div>
@@ -153,9 +153,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?php echo base_url() ?>assets/vendor/airdatepicker/dist/js/i18n/datepicker.en.js"></script>
     <script src="<?php echo base_url() ?>assets/vendor/mdtimepicker/mdtimepicker.min.js"></script>
     <script type="text/javascript">
-    // Initiate time picker
+    //Initiate time picker
     var dateToday = new Date(); 
-    mdtimepicker('.timepicker', { format: 'h:mm tt', hourPadding: 'true' , minDate: dateToday});
+    $('#date').datepicker({ 
+        minDate: dateToday
+    });
     </script>
 </body>
 </html>
